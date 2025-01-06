@@ -1,0 +1,23 @@
+{
+  "name": "bites-development/bites-sns",
+  "description": "Bites Sns",
+  "autoload": {
+    "psr-4": {
+      "Modules\\Sns\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Modules\\Sns\\Providers\\SnsServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+  },
+  "require": {
+    "aws/aws-php-sns-message-validator": "^1.9",
+    "aws/aws-sdk-php": "^3.336",
+    "laravel-notification-channels/aws-sns": "^1.6"
+  }
+}
