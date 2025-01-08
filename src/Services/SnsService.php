@@ -86,15 +86,22 @@ class SnsService
     /**
      * Subscribe an endpoint to a topic
      */
-    public function subscribe(string $topic, string $protocol, string $endpoint)
+    public function subscribe(string $siteUrl = null, string $topic = "Bites", string $protocol = 'https')
     {
+        if(!$siteUrl){
+            $siteUrl = url('api/sns-listener');
+        }
+        else
+        {
+            $siteUrl = $siteUrl.'/api/sns-listener';
+        }
         $topicArn = $this->generateTopicArn($topic);
         try {
             $result = $this->sns->subscribe(
                 [
                     'TopicArn' => $topicArn,
                     'Protocol' => $protocol, // http, https, email, sms, etc.
-                    'Endpoint' => url('api/sns-listener'),
+                    'Endpoint' => $siteUrl,
                 ]
             );
 
