@@ -3,9 +3,9 @@
 use Modules\Sns\Events\SnsMessageReceived;
 
 return [
-    'key' => env('AWS_ACCESS_KEY_ID'),
-    'secret' => env('AWS_SECRET_ACCESS_KEY'),
-    'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
+    'key' => env('SNS_ACCESS_KEY_ID'),
+    'secret' => env('SNS_SECRET_ACCESS_KEY'),
+    'region' => env('SNS_DEFAULT_REGION', 'us-east-1'),
     'listeners' => [
         SnsMessageReceived::class => [
 
