@@ -8,8 +8,8 @@ composer require bites-development/bites-sns:dev-main
 php artisan vendor:publish --tag="sns"
 
 ## Add AWS Config at env file
-AWS_ACCESS_KEY_ID
+SNS_ACCESS_KEY_ID
 
-AWS_SECRET_ACCESS_KEY
+SNS_SECRET_ACCESS_KEY
 
-AWS_DEFAULT_REGION
+SNS_DEFAULT_REGION
